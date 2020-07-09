@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>default</title>
+
+</head>
+<body>
+
+<table width="100%" cellspacing="0" style="font-size:16px;">
+    <tr>
+        <td width="721" colspan="9" align="center">江西拓世贸易有限公司销售清单</td>
+    </tr>
+    <tr>
+        <td colspan="3">销往单位:白银市中心医院</td>
+        <td colspan="6">开票日期:{$pbdata['SSRQ']} 使用人:{$pbdata['HZXM']} 住院号:{$pbdata['ZYH']}</td>
+    </tr>
+</table>
+<table width="100%" border="1" bordercolor="#000000" cellspacing="0" style="font-size:12px;">
+    <tr style="text-align: center">
+        <td colspan="2">产品名称</td>
+        <td>产品规格</td>
+        <td style="width:125px; text-align:center">生产商</td>
+        <td>效期</td>
+        <td>数量</td>
+        <td>单价</td>
+        <td>金额</td>
+        <td>批号</td>
+        <td>注册证号</td>
+    </tr>
+    <foreach name="ppdata_independent" item="vo">
+        <tr>
+            <td colspan="2">{$vo['SPMC']}</td>
+            <td> {$vo['GGXH']}</td>
+            <td>{$vo['SCS']}</td>
+            <td>{$vo['YXQ']}</td>
+            <td>{$vo['SL']}</td>
+            <td>{$vo['DJ']}</td>
+            <td>{$vo['JE']}</td>
+            <td>{$vo['SCPH']}</td>
+            <td>{$vo['ZCZH']}</td>
+        </tr>
+    </foreach>
+
+    <present name="ppdata_dependent">
+        <tr>
+            <td rowspan="{$pbdata['smallTypeCount']}">{$pbdata['greatTypeName']}</td>
+            <td>{$ppdata_dependent[0]['SPMC']}</td>
+            <td>{$ppdata_dependent[0]['GGXH']}</td>
+            <td>{$ppdata_dependent[0]['SCS']}</td>
+            <td>{$ppdata_dependent[0]['YXQ']}</td>
+            <td>{$ppdata_dependent[0]['SL']}</td>
+            <td>{$ppdata_dependent[0]['DJ']}</td>
+            <td>{$ppdata_dependent[0]['JE']}</td>
+            <td>{$ppdata_dependent[0]['SCPH']}</td>
+            <td>{$ppdata_dependent[0]['ZCZH']}</td>
+        </tr>
+        <volist name="ppdata_dependent" id="vo" offset="1">
+            <tr>
+                <td>{$vo['SPMC']}</td>
+                <td>{$vo['GGXH']}</td>
+                <td>{$vo['SCS']}</td>
+                <td>{$vo['YXQ']}</td>
+                <td>{$vo['SL']}</td>
+                <td>{$vo['DJ']}</td>
+                <td>{$vo['JE']}</td>
+                <td>{$vo['SCPH']}</td>
+                <td>{$vo['ZCZH']}</td>
+            </tr>
+        </volist>
+    </present>
+</table>
+<table width="100%" cellspacing="0" style="font-size:13px;">
+    <tr>
+        <td colspan="9" width="721">合计金额：{$pbdata['HJJE']}     合计金额（大写）：{$pbdata['DXJE']}      售出器械为特殊商品，非质量问题不退货！</td>
+    </tr>
+    <tr>
+        <td colspan="9" width="721">开票人    系统管理员     验收员      复核员     收货人        白联：存根   红联：客户  黄联：财务</td>
+    </tr>
+    <tr>
+        <td colspan="9" width="721">地址：兰州市七里河区硷沟沿270号1812室</td>
+    </tr>
+</table>
+
+
+</body>
+</html>

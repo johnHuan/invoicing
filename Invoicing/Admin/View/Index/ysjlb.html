@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>default</title>
+
+</head>
+<body>
+
+<table width="100%" border="1" bordercolor="#000000" cellspacing="0" style=" font-size:14px; text-align:center;">
+    <caption style=" font-size:16px; padding:20px 0; font-weight:bold;">白银市中心医院植入性医疗器械验收记录表 ({$pbdata.SSRQ})</caption>
+    <tr>
+        <td style="width:80px; text-align:center">购入日期</td>
+        <td>商品名称</td>
+        <td>规格型号</td>
+        <td style="width:25px; text-align:center">单位</td>
+        <td style="width:25px; text-align:center">数量</td>
+        <td>注册证号</td>
+        <td style="width:95px; text-align:center">生产商</td>
+        <td style="width:95px; text-align:center">供应商</td>
+        <td style="width:30px; text-align:center">使用部门</td>
+        <td>生产批号</td>
+        <td style="white-space:nowrap">效期</td>
+        <td style="width:25px; text-align:center">合格证</td>
+        <td style="width:30px; text-align:center">包装情况</td>
+        <td style="white-space:nowrap">保管人</td>
+        <td style="white-space:nowrap">使用人</td>
+        <td>住院号</td>
+    </tr>
+    <foreach name="ppdata" item="vo" >
+    <tr>
+        <td>{$vo['GRRQ']}</td>
+        <td>{$vo['SPMC']}</td>
+        <td>{$vo['GGXH']}</td>
+        <td>{$vo['DW']}</td>
+        <td>{$vo['SL']}</td>
+        <td>{$vo['ZCZH']}</td>
+        <td>{$vo['SCS']}</td>
+        <td>{$vo['GYS']}</td>
+        <td style="padding:10px 0;">{$vo['SYB']}</td>
+        <td>{$vo['SCPH']}</td>
+        <td>{$vo['YXQ']}</td>
+        <td>{$vo['HGZ']}</td>
+        <td>{$vo['BZQK']}</td>
+        <td> </td>
+        <td>{$vo['SYR']}</td>
+        <td>{$pbdata['ZYH']}</td>
+    </tr>
+    </foreach>
+    <tr>
+        <td colspan="16" align="center" style="padding:20px 0;"><span>验货人：</span><span style="padding:0 200px;">复核人：</span>日期：</td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>
